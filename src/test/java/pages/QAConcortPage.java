@@ -43,6 +43,28 @@ public class QAConcortPage {
     @FindBy (id = "Code")
     public WebElement addHotelCodeBox;
 
+    @FindBy (id = "IDGroup")
+    public WebElement selectGroup;
+
+    @FindBy(id = "btnSubmit")
+    public WebElement createHotelSave;
+
+    @FindBy (xpath = "//div[@class='bootbox-body']")
+    public WebElement htmlAlertText;
+
+    @FindBy (xpath = "//button[@class='btn btn-primary']")
+    public WebElement htmlOkButtonElement;
+
+    @FindBy(partialLinkText = "Hotel Rooms")
+    public WebElement hotelRoomsButonu;
+
+    @FindBy(xpath = "(//span[@class='caption-subject font-green-sharp bold uppercase'])")
+    public WebElement listOfHotelRoomsYazisi;
+
+
+
+
+
 
 
 

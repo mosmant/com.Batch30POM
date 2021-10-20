@@ -4,7 +4,9 @@ import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pages.QAConcortPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -12,7 +14,7 @@ import utilities.Driver;
 public class C02_E2ETest {
 
     @Test
-    public void createHotel(){
+    public void createHotel() throws InterruptedException {
 
         //  1. Tests packagenin altına class olusturun: D17_CreateHotel
         //  2. Bir metod olusturun: createHotel
@@ -59,14 +61,34 @@ public class C02_E2ETest {
                 .sendKeys(Keys.TAB).sendKeys(faker.phoneNumber().cellPhone())
                 .sendKeys(Keys.TAB).sendKeys(faker.internet().emailAddress()).perform();
 
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+
+        Select select = new Select(qaConcortPage.selectGroup);
+        select.selectByVisibleText("Hotel Type1");
+
+        //  8. Save butonuna tıklayın.
+        qaConcortPage.createHotelSave.click();
+        Thread.sleep(5000);
 
 
+        //  9. “Hotel was inserted successfully” textinin göründüğünü test edin.
+        Assert.assertTrue(qaConcortPage.htmlAlertText.isDisplayed(),"text not visible  TEST FAILED");
 
+        //  10. OK butonuna tıklayın.
+        qaConcortPage.htmlOkButtonElement.click();
 
+        // 11. hotel rooms linkine tiklayiniz
+        qaConcortPage.hotelRoomsButonu.click();
 
+        // 12. "LIST OF HOTELROOMS" textinin gorundugunu dogrulayınız.
 
+        SoftAssert softAssert = new SoftAssert();
 
+        softAssert.assertTrue(qaConcortPage.listOfHotelRoomsYazisi.isDisplayed(),"text not visible  TEST FAILED");
 
+        softAssert.assertAll();
+
+        Driver.closeDriver();
 
     }
 
