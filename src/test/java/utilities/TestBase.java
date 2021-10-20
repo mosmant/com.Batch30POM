@@ -27,11 +27,11 @@ public abstract class TestBase {
     //
 
     protected WebDriver driver;
+
     @BeforeClass
     public void setup(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
