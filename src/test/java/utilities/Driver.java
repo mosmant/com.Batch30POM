@@ -10,6 +10,7 @@ import org.openqa.selenium.opera.OperaDriver;
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
+    private Driver(){}
     // public ve static -> heryerden ulasabilirim. Class ismiyle static veriye ulasabilirim...
     // ama baska classlardan bu driveri yanlislikla kullanmasinlar diye erisimi private yaptik.(sadece bu classin kullanimina acik)
 
