@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class QAConcortPage {
 
     public WebDriver driver;
@@ -84,6 +86,24 @@ public class QAConcortPage {
 
     @FindBy (linkText = "Hotelrooms")
     public WebElement hotelroomsuplink;
+
+    @FindBy (xpath = "//thead/tr[1]/th")
+    public List<WebElement> basliklarListesi;
+
+    @FindBy(xpath = "//tbody")
+    public WebElement tBodyTumu;
+
+    @FindBy(xpath = "//tbody//tr")
+    public List<WebElement> satirListesi;
+
+    @FindBy (xpath = "//tbody//tr[1]")
+    public WebElement birinciSatir;
+
+    @FindBy (xpath = "//tbody//tr//td[4]")
+    public List<WebElement> dorduncuSutunListesi;
+
+
+
 
 
 

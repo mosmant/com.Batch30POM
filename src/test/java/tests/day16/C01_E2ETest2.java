@@ -93,7 +93,7 @@ public class C01_E2ETest2 {
 
         // LIST OF USERS yazisinib testi yapilmadi. internetin kotu olmasindan dolayi.
 
-
+        Driver.closeDriver();
 
 
 
