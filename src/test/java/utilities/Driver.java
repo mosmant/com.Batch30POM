@@ -15,7 +15,7 @@ public class Driver {
     // ama baska classlardan bu driveri yanlislikla kullanmasinlar diye erisimi private yaptik.(sadece bu classin kullanimina acik)
 
 
-    private static WebDriver driver;
+    public static WebDriver driver;
 
     public static WebDriver getDriver(){
 
