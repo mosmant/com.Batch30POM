@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 import java.util.List;
@@ -101,6 +102,34 @@ public class QAConcortPage {
 
     @FindBy (xpath = "//tbody//tr//td[4]")
     public List<WebElement> dorduncuSutunListesi;
+
+    @FindBy (xpath = "//tbody//tr//td")
+    public List<WebElement> tumHucrelerListesi;
+
+    @FindBy (xpath = "//tbody//tr[1]//td")
+    public List<WebElement> columnListesi;
+
+    @FindBy (xpath = "//tbody//tr//td[5]")
+    public List<WebElement> besincisutunListesi;
+
+
+
+
+
+
+
+
+
+
+
+    public void ConcortHotelLogin(){
+        Driver.getDriver().get(ConfigReader.getProperty("CHQAUrl"));
+        QAConcortPage qaConcortPage=new QAConcortPage();
+        qaConcortPage.ilkLoginLinki.click();
+        qaConcortPage.usernameKutusu.sendKeys(ConfigReader.getProperty("CHQAValidUsername"));
+        qaConcortPage.passwordKutusu.sendKeys(ConfigReader.getProperty("CHQAValidPassword"));
+        qaConcortPage.loginButonu.click();
+    }
 
 
 
