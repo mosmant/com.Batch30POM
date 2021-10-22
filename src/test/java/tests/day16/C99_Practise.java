@@ -1,8 +1,12 @@
 package tests.day16;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import pages.QAConcortPage;
 import utilities.Driver;
+
+import java.util.List;
 
 public class C99_Practise {
 
@@ -71,11 +75,19 @@ public class C99_Practise {
  @Test (dependsOnMethods = "login")
     public void printColumns(){
     qaConcortPage = new QAConcortPage();
-     //	○ table body’sinde bulunan toplam sutun(column) sayısını bulun.
-     System.out.println(qaConcortPage.columnListesi.size());
+     //○ table body’sinde bulunan toplam sutun(column) sayısını bulun.
+     int columnNumberInTableBody = Driver.getDriver().findElements(By.xpath("//tbody//tr[1]//td")).size();
+     System.out.println("Column number in table body is: " + columnNumberInTableBody);
+     System.out.println("-------------------------------------------------------------------------");
+     //○ Table body’sinde bulunan sutunlari(column) konsolda yazdırın.
 
-     //	○ Table body’sinde bulunan sutunlari(column) konsolda yazdırın.
+     for (int i = 1; i < columnNumberInTableBody + 1; i++) {
 
+         List<WebElement> eachColumnElements = Driver.getDriver().findElements(By.xpath("//tbody//td[" + i + "]"));
+         System.out.println(i + ". Column's Elemnts are: ");
+         System.out.println("---------------------------");
+         eachColumnElements.stream().forEach(t -> System.out.println(t.getText()));
+         System.out.println();
 
 
      //	○ 5.column daki elementleri konsolda yazdırın.
@@ -85,4 +97,4 @@ public class C99_Practise {
 
  }
 
-}
+}}

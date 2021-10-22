@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -132,18 +133,20 @@ public class QAConcortPage {
     }
 
 
+    public String printData(int row, int column) {
+        // ornekteki haliyle 3 satir 5 sutun haliyle yazdiralim.
+        // String xpath = //tbody//tr[3]//td[5]
+        // degismeyecek kisimalri string , degisecek kisimlari ise parametre ismi olarak yazdik.
+
+        String xpath ="//tbody//tr["+row+"]//td["+column+"]"; // concat
 
 
+        // @FindBy annotation i parametre alamadigi icin eski findElement methoduna By.xpath methodunu kullandik.
+        String istenenData = Driver.getDriver().findElement(By.xpath(xpath)).getText();
+        System.out.println("row no: "+ row + " , column no : "+ column +" data : "+istenenData);
 
 
+        return istenenData;
 
-
-
-
-
-
-
-
-
-
+    }
 }
