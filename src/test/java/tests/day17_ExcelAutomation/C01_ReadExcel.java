@@ -17,6 +17,8 @@ public class C01_ReadExcel {
     @Test
     public void test() throws IOException {
         // 7. Dosya yolunu bir String degiskene atayalim
+        // path from content root
+
 
         String dosyaYolu ="src/test/java/resources/ulkeler.xlsx";
 
