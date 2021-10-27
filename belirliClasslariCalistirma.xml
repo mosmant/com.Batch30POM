@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Class Calistirma">
+    <test name="farkli classlari calistirma">
+        <classes>
+            <class name="tests.smokeTest.PositiveLoginTest"></class>
+            <class name="tests.day13_POM.C01_Pages"></class>
+            <class name="tests.day15_POM.C01_DriverClassKullanimi"></class>
+
+            <!-- Eger tests den sonra package secmezsem farkli packagelerden classlar ekleyebilirim -->
+            
+            <!-- burada 4 Test passed dedi cunku adet test methodu calisti -->
+        </classes>
+    </test>
+</suite>

@@ -1,4 +1,4 @@
-package tests.day17;
+package tests.day17_WebTables;
 
 
 import com.github.javafaker.Faker;
@@ -15,7 +15,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import java.sql.Driver;
 import java.util.concurrent.TimeUnit;
 
 ///**

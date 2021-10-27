@@ -20,7 +20,7 @@ public class NegativeLoginTest {
 
     QAConcortPage qaConcortPage;
 
-    @Test (priority = -1)
+    @Test (priority = -1,groups = "birinciGroup" )
     public void yanlisSifre(){
         //  2) https://qa-environment.concorthotel.com/ adresine git
         Driver.getDriver().get(ConfigReader.getProperty("CHQAUrl"));
@@ -62,7 +62,7 @@ public class NegativeLoginTest {
 
     }
 
-    @Test (dependsOnMethods = "yanlisSifre" )
+    @Test (dependsOnMethods = "yanlisSifre",groups = "birinciGroup" )
     public void yanlisSifreKullanici(){
         qaConcortPage = new QAConcortPage();
         // 1 siteye gitmeyecegim
