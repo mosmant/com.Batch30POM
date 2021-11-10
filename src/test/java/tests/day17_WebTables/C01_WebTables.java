@@ -29,7 +29,7 @@ public class C01_WebTables {
         // assert u bu classta yapmak istiyorsak istenen datanin bu class a gelmeşni saglamalıyız.
         // bunu da printData methodunu return methodu olarak dizayn etmeliyiz.
 
-        Assert.assertEquals(actualData,"USA","missmatch data text TEST FAILED");
+        Assert.assertEquals(actualData,"America","missmatch data text TEST FAILED");
 
 
     }

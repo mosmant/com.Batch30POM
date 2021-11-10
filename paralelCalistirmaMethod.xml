@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="paralel class calistirma">
+    <test name="paralel calisma 1" parallel="methods" thread-count="2" verbose="3">  <!--2 driveri calistiracagiz -->
+
+        <!-- PARALEL CALISMADA CALISACAK TESTLERIN SECIMI ILE DRIVERLAR ARASINDA GOREV BOLUSUMUNUN HANGI SEVIYEDE OLACAGI
+        KONUSUNDAKI SECIMIN BIR BAGI YOKTUR.
+
+         TAVSIYE OLARAK CALISACAK DOSYLARIN KARISMAMASI ICIN MUMKUN OLDUGUNCA AYRIMI TEST PACKAGE GIBI TOPARLAYICI YAPMAK GEREKIR.-->
+
+        <classes>
+            <class name="tests.day13_POM.C02_PagesFacebook"></class>  <!-- bu 1. driverin gorevi -->
+            <class name="tests.smokeTest.PositiveLoginTest"></class><!-- bu 2. driverin gorevi -->
+            <class name="tests.day14_POM.C04_AmazonConfigReader"></class><!-- bu ise isi ilk bitenin yapacagi -->
+            <class name="tests.day16_WebTables.C01_E2ETest2"></class><!-- bu da ilk isi biten driverin yapacagi is -->
+        </classes>
+    </test>
+</suite>

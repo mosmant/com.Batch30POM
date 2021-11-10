@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="paralel class calistirma">
+    <test name="paralel calisma 1" parallel="classes" thread-count="2" verbose="3">  <!--2 driveri calistiracagiz -->
+        <classes>
+            <class name="tests.day13_POM.C02_PagesFacebook"></class>  <!-- bu 1. driverin gorevi -->
+            <class name="tests.day17_WebTables.C01_WebTables"></class><!-- bu 2. driverin gorevi -->
+            <class name="tests.day19_ReUsableMethods.C02_WindowHandleReports"></class><!-- bu ise isi ilk bitenin yapacagi -->
+            <class name="tests.day17_ExcelAutomation.C01_ReadExcel"></class><!-- bu da ilk isi biten driverin yapacagi is -->
+        </classes>
+    </test>
+</suite>
