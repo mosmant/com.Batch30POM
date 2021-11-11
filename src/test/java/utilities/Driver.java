@@ -33,7 +33,7 @@ public class Driver {
             driver = new ChromeDriver();
             break;
 
-            case "firedox":
+            case "firefox":
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
             break;
